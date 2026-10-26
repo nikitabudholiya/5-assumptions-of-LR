@@ -18,7 +18,7 @@ Linear regression works best when 5 conditions hold. If they are violated, the m
 
 The relationship between input (X) and output (y) should be a straight line.
 
-![Linearity](images/01_linearity.png)
+![Linearity](01_linearity.png)
 
 - **Check:** scatter plot of X vs y, or residuals vs predicted values (there should be no curve).
 - **Fix:** transform the features (log, square root), add polynomial terms, or use a non-linear model.
@@ -29,7 +29,7 @@ The relationship between input (X) and output (y) should be a straight line.
 
 Input columns should not be highly correlated with each other. If one feature can be predicted from another, the model cannot tell which one is actually driving the output, so the coefficients become unstable.
 
-![Multicollinearity](images/02_multicollinearity.png)
+![Multicollinearity](02_multicollinearity.png)
 
 - **Check:** correlation matrix, or VIF (Variance Inflation Factor). VIF above 5 to 10 is a warning sign.
 - **Fix:** drop one of the correlated features, combine them, or use PCA / Ridge regression.
@@ -40,7 +40,7 @@ Input columns should not be highly correlated with each other. If one feature ca
 
 If we plot the distribution of the residuals, it should look like a bell curve centered at 0.
 
-![Normality](images/03_normality.png)
+![Normality](03_normality.png)
 
 - **Check:** histogram of residuals, Q-Q plot, or Shapiro-Wilk test.
 - **Fix:** transform the target (log, Box-Cox), or remove extreme outliers.
@@ -52,7 +52,7 @@ If we plot the distribution of the residuals, it should look like a bell curve c
 
 The residuals should have the same scatter at every predicted value. When the spread grows or shrinks (a funnel shape), it is called heteroscedasticity.
 
-![Homoscedasticity](images/04_homoscedasticity.png)
+![Homoscedasticity](04_homoscedasticity.png)
 
 - **Check:** plot residuals vs predicted values, or run the Breusch-Pagan test.
 - **Fix:** transform the target (log), or use weighted least squares.
@@ -63,7 +63,7 @@ The residuals should have the same scatter at every predicted value. When the sp
 
 Residuals should be independent of each other. One residual should not tell us anything about the next one. This is mostly a problem in time-series data.
 
-![Autocorrelation](images/05_autocorrelation.png)
+![Autocorrelation](05_autocorrelation.png)
 
 - **Check:** plot residuals in order, or use the Durbin-Watson test (a value near 2 means no autocorrelation).
 - **Fix:** add lag features, or use time-series models like ARIMA.
